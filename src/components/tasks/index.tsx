@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material"
+import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@mui/material"
 
 const Tasks = () => {
     return (
