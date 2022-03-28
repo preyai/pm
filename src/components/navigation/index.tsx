@@ -6,16 +6,15 @@ import {
     Brightness7
 } from '@mui/icons-material';
 import { Box, CssBaseline, Toolbar, IconButton, Typography, Divider, List, ListItemButton, ListItemIcon, ListItemText, AppBar, AppBarProps, Theme, CSSObject, styled, useTheme, Drawer } from '@mui/material';
-import { ReactChild, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { useThemeContext } from "../../context/themeContext";
-import { Page } from '../../interfaces/page';
+import { MenuPage } from '../../interfaces/page';
 
 const drawerWidth = 240;
 
 interface NavigationProps {
-    pages:Array<Page>,
-    children: ReactChild
+    pages:Array<MenuPage>
 }
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -86,7 +85,7 @@ const SideDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open'
     }),
 );
 
-export default function Navigation({ children, pages }: NavigationProps) {
+export default function Navigation({ pages }: NavigationProps) {
     const navigate = useNavigate();
     const location = useLocation();
     const theme = useTheme();
@@ -164,7 +163,7 @@ export default function Navigation({ children, pages }: NavigationProps) {
             </SideDrawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
-                {children}
+                <Outlet />
             </Box>
         </Box>
     );

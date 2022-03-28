@@ -1,15 +1,12 @@
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import { createContext, ReactChild, useContext, useMemo, useState } from "react";
+import { WrapperProps } from "../interfaces/wrapperProps";
 
 type Mode = 'light' | 'dark'
 
 interface ThemeContextInterface {
   toggleColorMode: () => void
-}
-
-interface WrapperProps {
-  children: ReactChild
 }
 
 const ThemeContext = createContext<ThemeContextInterface>({ toggleColorMode: () => { } })

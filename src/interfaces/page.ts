@@ -1,8 +1,12 @@
 import { SvgIconComponent } from "@mui/icons-material";
 
 export interface Page {
-    title: string,
     path: string,
-    icon: SvgIconComponent,
     element: JSX.Element
+    pages?: Page[]
+}
+
+export interface MenuPage extends Page {
+    title: string,
+    icon: SvgIconComponent,
 }
