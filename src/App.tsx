@@ -6,7 +6,7 @@ const App = () => {
 
     return (
         <>
-            <Container>
+            <Container sx={{ paddingBottom: 7 }}>
                 <TaskList />
             </Container>
             <Footer />
