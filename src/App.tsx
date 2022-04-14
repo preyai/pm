@@ -1,24 +1,16 @@
-import useCounter from "./hooks/useCounter";
+import { BottomNavigation, BottomNavigationAction, Container, Paper } from "@mui/material";
+import TaskList from "./components/TaskList";
+import Footer from "./components/Footer";
 
 const App = () => {
-    const { counter, dispatchCounter } = useCounter()
 
     return (
-        <div>
-            <button
-                aria-label="Increment value"
-                onClick={() => dispatchCounter(counter.value + 1)}
-            >
-                Increment
-            </button>
-            <span>#{counter.value}</span>
-            <button
-                aria-label="Decrement value"
-                onClick={() => dispatchCounter(counter.value - 1)}
-            >
-                Decrement
-            </button>
-        </div>
+        <>
+            <Container>
+                <TaskList />
+            </Container>
+            <Footer />
+        </>
     )
 }
 
