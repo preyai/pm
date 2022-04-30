@@ -6,7 +6,8 @@ export interface Page {
     pages?: Page[]
 }
 
-export interface MenuPage extends Page {
+export interface MenuPage {
     title: string,
+    path: string,
     icon: SvgIconComponent,
 }
